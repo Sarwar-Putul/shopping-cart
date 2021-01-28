@@ -77,6 +77,29 @@
          </div>
       </div>
       <script>
+//Phone activitis in functional way
+
+         document.getElementById('phone-increase').addEventListener('click', function() {
+            handlePhoneChange(true);
+         });
+         document.getElementById('phone-decrease').addEventListener('click', function() {
+            handlePhoneChange(false);
+         });
+
+         function handlePhoneChange(isIncrease){
+            const phoneInput = document.getElementById('phone-count');
+            const phoneCount = parseInt(phoneInput.value);
+            if(isIncrease == true) {
+               phoneNewCount = phoneCount + 1;
+            }
+            if(isIncrease == false) {
+               phoneNewCount = phoneCount - 1;
+            }
+            phoneInput.value = phoneNewCount;
+            const phoneTotal = phoneNewCount * 1219;
+            document.getElementById('phone-total').innerText = '$' + phoneTotal;
+         }
+// case activitis functional way
 
       function handleProductChange(isIncrease) {
          const caseInput = document.getElementById('case-count');
@@ -93,24 +116,26 @@
             document.getElementById('case-total').innerText = '$'+caseTotal;
       }
 
+//*** Phone activitis in logical way
+      // document.getElementById('phone-increase').addEventListener('click', function() {
+      //    const phoneInput = document.getElementById('phone-count');
+      //    const phoneCount = parseInt(phoneInput.value);
+      //    const phoneNewCount = phoneCount + 1;
+      //    phoneInput.value = phoneNewCount;
+      //    const phoneTotal = phoneNewCount * 1219;
+      //    document.getElementById('phone-total').innerText = '$' + phoneTotal;
+      // })
 
-      document.getElementById('phone-increase').addEventListener('click', function() {
-         const phoneInput = document.getElementById('phone-count');
-         const phoneCount = parseInt(phoneInput.value);
-         const phoneNewCount = phoneCount + 1;
-         phoneInput.value = phoneNewCount;
-         const phoneTotal = phoneNewCount * 1219;
-         document.getElementById('phone-total').innerText = '$' + phoneTotal;
-      })
+      // document.getElementById('phone-decrease').addEventListener('click', function() {
+      //    const phoneInput = document.getElementById('phone-count');
+      //    const phoneCount = parseInt(phoneInput.value);
+      //    const phoneNewCount = phoneCount - 1;
+      //    phoneInput.value = phoneNewCount;
+      //    const phoneTotal = phoneNewCount * 1219;
+      //    document.getElementById('phone-total').innerText = '$' + phoneTotal;
+      // })
 
-      document.getElementById('phone-decrease').addEventListener('click', function() {
-         const phoneInput = document.getElementById('phone-count');
-         const phoneCount = parseInt(phoneInput.value);
-         const phoneNewCount = phoneCount - 1;
-         phoneInput.value = phoneNewCount;
-         const phoneTotal = phoneNewCount * 1219;
-         document.getElementById('phone-total').innerText = '$' + phoneTotal;
-      })
+//*** Case activitis in logical way
 
       //    document.getElementById('case-increase').addEventListener('click', function(){
       //       const caseInput = document.getElementById('case-count');
